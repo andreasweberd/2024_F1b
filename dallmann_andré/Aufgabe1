@@ -4,7 +4,7 @@ void setup(){
 
 void ledblink(int delayTime){  // Funktion mit einem Argument
 
-  for (int i = 0; i < 5; i++){
+  for (int i = 0; i < 10; i++){
     analogWrite(9, 1);          // LED schwach leuchten lassen
     delay(delayTime);           // Variable Verzögerung
     analogWrite(9, 50);        // LED Mitteh leuchten lassen
@@ -21,7 +21,7 @@ void ledblink(int delayTime){  // Funktion mit einem Argument
 }
 
 void loop(){
-  ledblink(250);
+  ledblink(150);
   analogWrite(9, 0);
   while(true);             
 }
