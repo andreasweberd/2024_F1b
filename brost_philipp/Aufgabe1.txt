@@ -1,0 +1,20 @@
+int Led = 9; 
+
+void setup() {
+  pinMode(Led, OUTPUT); 
+  blink(5); 
+}
+
+void loop() {
+  
+}
+
+
+void blink(int times) {
+  for (int x = 0; x  times; x+1) {
+  digitalWrite(Led, HIGH);  
+  delay(100);                  
+
+  digitalWrite(Led, LOW);   
+  delay(2000);               
+}}
