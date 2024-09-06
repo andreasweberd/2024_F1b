@@ -7,13 +7,21 @@ void ledblink(int delayTime){  // Funktion mit einem Argument
   for (int i = 0; i < 5; i++){
     analogWrite(9, 1);          // LED schwach leuchten lassen
     delay(delayTime);           // Variable Verzögerung
-    analogWrite(9, 100);        // LED Mitteh leuchten lassen
+    analogWrite(9, 50);        // LED Mitteh leuchten lassen
     delay(delayTime);           
+    analogWrite(9, 100);        
+    delay(delayTime);
+    analogWrite(9, 150);        
+    delay(delayTime);
+    analogWrite(9, 200);        
+    delay(delayTime);
     analogWrite(9, 255);        
-    delay(delayTime);           
+    delay(delayTime);          
   }
 }
 
 void loop(){
-  ledblink(500);             
+  ledblink(250);
+  analogWrite(9, 0);
+  while(true);             
 }
