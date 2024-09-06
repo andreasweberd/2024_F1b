@@ -1,0 +1,16 @@
+
+int meineVariabel = 0;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(9, OUTPUT);
+}
+
+void loop()  {
+
+  digitalWrite(9, HIGH);
+  delay(800);
+  digitalWrite(9, LOW);
+  delay(1000);
+}
