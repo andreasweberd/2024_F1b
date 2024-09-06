@@ -1,0 +1,32 @@
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+  //analogWrite(9, 1);
+  //delay(1000);
+  //analogWrite(9, 255);
+  //delay(1000);
+
+  //digitalWrite(9, HIGH);
+  //delay(1000);
+  //digitalWrite(9, LOW);
+  //delay(1000);
+
+  blink(5);
+
+}
+
+int blink(int){
+  int count=1;
+  while(count<=5){
+    Serial.println(count);
+    digitalWrite(9, HIGH);
+    delay(1000);
+    digitalWrite(9, LOW);
+    delay(1000);
+    count+=1;
+  }
+}
