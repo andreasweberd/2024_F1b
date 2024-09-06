@@ -1,0 +1,25 @@
+int anzahlBlink = 5;
+bool blinked = false;
+
+void setup() {
+  pinMode(9, OUTPUT);
+  Serial.begin(9600);
+  Serial.println("setup");
+}
+
+void loop() {
+  if (!blinked) {
+    blink(anzahlBlink);
+    blinked = true; 
+  }
+}
+
+void blink(int count){
+  while (count > 0) {
+    digitalWrite(9, HIGH);  
+    delay(1000);            
+    digitalWrite(9, LOW);   
+    delay(1000);            
+    count--;                
+  }
+}
