@@ -1,0 +1,24 @@
+int blink = 0;
+
+void setup() {
+  pinMode(9, OUTPUT);
+}
+
+//void loop(){
+  //for(int blink=0;blink<5;blink++)
+  //digitalWrite(9, HIGH);
+  //delay(1000);
+  //digitalWrite(9, LOW);
+  //delay(1000);
+//}
+void loop() {
+
+  while (blink<5) {
+  digitalWrite(9, HIGH);
+  delay(1000);
+  digitalWrite(9, LOW);
+  delay(1000);
+  blink++;
+  break;
+}
+}
