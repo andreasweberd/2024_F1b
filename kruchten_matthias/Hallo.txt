@@ -1,1 +1,26 @@
-Hallo Welt
+int meineVariable1 = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  Serial.println("setup");
+}
+
+
+
+void loop() {
+
+  // put your main code here, to run repeatedly:
+  meineVariable1 = hallo(meineVariable1);
+
+ 
+  Serial.println(meineVariable1);
+  delay(1000);
+}
+
+
+int hallo(int meinParameter1){
+
+  return meinParameter1+1;
+
+}
