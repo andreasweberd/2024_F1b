@@ -11,7 +11,7 @@ void loop() {
 
 
 void blink(int times) {
-  for (int x = 0; x < times; x++) {
+  for (int x = 0; x < times; x++) 
     digitalWrite(ledPin, HIGH);  
     delay(500);                  
     digitalWrite(ledPin, LOW);   
