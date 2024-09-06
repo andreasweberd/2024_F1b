@@ -12,7 +12,7 @@ void loop() {
     blink();
   }
   analogWrite(9, 0);
-  delay(5000);
+  delay(1000);
 }
 
 int blink() {
