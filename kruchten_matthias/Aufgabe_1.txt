@@ -1,0 +1,23 @@
+void setup() {
+  // put your setup code here, to run once:
+pinMode(9, OUTPUT);
+blink(5);
+}
+
+void loop() {
+
+  // put your main code here, to run repeatedly:
+  
+}
+
+int blink(int blinken){
+  int b = 0;
+  do{
+    analogWrite(9, HIGH);
+    delay(1000);
+    analogWrite(9, LOW);
+    delay(1000);
+    b++;
+    Serial.println(b);
+  }while(b<blinken);
+}
