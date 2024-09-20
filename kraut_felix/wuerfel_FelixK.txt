@@ -1,6 +1,7 @@
 int ergebnis = 0;
 
 void setup() {
+  Serial.begin(9600);
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
