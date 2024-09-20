@@ -15,12 +15,13 @@ void setup() {
 void loop() {
   if (digitalRead(5) == HIGH){
     ledsAus();
-    delay(1000);
-    ergebnis = random(1,6);
+    delay(100);
+    ergebnis = random(1,7);
+    //Der Wert in der Leiste drüber ist veränderbar, so kann man einen Würfel basteln, der z.B. nur von 1-4 würfeln soll. Beinhaltet die Eingabe eine ungültige Zahl, wird die violette LED angesteuert, die einen Fehler repräsentiert.
     Serial.println(ergebnis);
 
     anzeigen(ergebnis);
-    delay(1000);
+    delay(100);
     }
   }
 
@@ -63,6 +64,17 @@ void anzeigen(int ergebnis){
     digitalWrite(11, HIGH);
     digitalWrite(12, HIGH);
   }
+
+  else if (ergebnis > 6){
+    digitalWrite(9, HIGH);
+    Serial.print("Dies ist eine ungültige Zahl!");
+  }
+
+  else if (ergebnis < 1){
+    digitalWrite(9, HIGH);
+    Serial.print("Dies ist eine ungültige Zahl!");
+  }
+    
 }
 
 void ledsAus(){
