@@ -15,12 +15,12 @@ void setup() {
 void loop() {
   if (digitalRead(5) == HIGH){
     ledsAus();
-    delay(1000);
+    delay(200);
     ergebnis = random(1,6);
     Serial.println(ergebnis);
 
     anzeigen(ergebnis);
-    delay(1000);
+    delay(200);
     }
   }
 
