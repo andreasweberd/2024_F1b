@@ -1,0 +1,64 @@
+const int ledPins[] = {6, 7, 8, 9, 10, 11, 12}; 
+const int numLeds = sizeof(ledPins) / sizeof(ledPins[0]); 
+int ergebnis = 0;
+
+void setup() {
+  for (int i = 0; i < numLeds; i++) {
+    pinMode(ledPins[i], OUTPUT);
+    pinMode(5, INPUT);
+    Serial.begin(9600);
+  }
+}
+
+void loop() {
+  if (digitalRead(5) == HIGH) {
+    ergebnis = random(1,7);
+    Serial.println(ergebnis);
+    ledOff();
+    anzeigen(ergebnis);
+  }
+
+  delay(100);
+}
+
+void anzeigen(int ergebnis){
+  if(ergebnis == 1){
+    digitalWrite(6,HIGH);
+  }
+  else if(ergebnis == 2){
+    digitalWrite(12,HIGH);
+    digitalWrite(9,HIGH);
+  }
+  else if(ergebnis == 3){
+    digitalWrite(12,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(6,HIGH);
+  }
+  else if(ergebnis == 4){
+    digitalWrite(12,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(7,HIGH);
+  }
+  else if(ergebnis == 5){
+    digitalWrite(12,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(7,HIGH);
+    digitalWrite(8,HIGH);
+  }
+  else if(ergebnis == 6){
+    digitalWrite(12,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(7,HIGH);
+    digitalWrite(11,HIGH);
+    digitalWrite(6,HIGH);
+  }
+}
+
+void ledOff(){    
+  for (int i = 0; i < numLeds; i++) {
+    	digitalWrite(ledPins[i], LOW);
+  }
+}
