@@ -1,0 +1,4 @@
+Buch S.109
+QoS 0: Sensordaten (höchstens einmal)
+QoS 1: Alarme oder bei Temperaturdaten (mindestens einmal)
+QoS 2: kritische Daten wie Transaktionen (genau einmal)

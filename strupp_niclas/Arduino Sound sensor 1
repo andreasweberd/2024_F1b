@@ -1,0 +1,15 @@
+void setup() {
+    pinMode(8, OUTPUT);
+    pinMode(A2, INPUT);
+
+    Serial.begin(9600);
+  // put your setup code here, to run once:
+}
+
+void loop() {
+ 
+  Serial.println(analogRead(A2));
+  delay(80);
+  // put your main code here, to run repeatedly:
+
+}
