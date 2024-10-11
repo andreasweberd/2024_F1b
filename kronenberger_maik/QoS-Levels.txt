@@ -1,0 +1,18 @@
+
+QoS Level 0 (At most once):
+
+Beschreibung: Die Nachricht wird höchstens einmal zugestellt, und es gibt keine Bestätigung vom Empfänger. 
+
+Einsatzfeld: Geeignet für nicht-kritische Nachrichten, z.B. Temperaturmeldungen in einem Sensor-Netzwerk.
+
+QoS Level 1 (At least once):
+
+Beschreibung: Die Nachricht wird mindestens einmal zugestellt, und der Absender erhält eine Bestätigung vom Empfänger.
+
+Einsatzfeld: Geeignet für Anwendungen, bei denen es wichtig ist, dass die Nachricht zugestellt wird, aber Duplikate tolerierbar sind, z.B. Alarmmeldungen in einem Überwachungssystem.
+
+QoS Level 2 (Exactly once):
+
+Beschreibung: Die Nachricht wird genau einmal zugestellt, und es gibt eine strenge Bestätigung zwischen Absender und Empfänger.
+
+Einsatzfeld: Geeignet für kritische Anwendungen, bei denen Duplikate nicht akzeptabel sind, z.B. Finanztransaktionen.

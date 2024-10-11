@@ -2,7 +2,7 @@ int ergebnis = 0;
 
 void setup() {
   Serial.begin(9600);
-  
+
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
@@ -16,18 +16,18 @@ void setup() {
 void loop() {
   if (digitalRead(5) == HIGH){
     ledsAus();
-    ergebnis = random(1,6);
+    ergebnis = random(1,7);
     Serial.println(ergebnis);
 
     anzeigen(ergebnis);
 
     }
-  delay(2500);
+  delay(1000);
   }
 
 void anzeigen(int ergebnis){
   if (ergebnis == 1){
-    digitalWrite(6, HIGH);
+    digitalWrite(9, HIGH);
   }
 
   else if (ergebnis == 2){

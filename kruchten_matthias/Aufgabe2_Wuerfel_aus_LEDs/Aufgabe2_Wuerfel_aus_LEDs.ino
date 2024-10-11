@@ -19,7 +19,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   if(digitalRead(5)==HIGH){
     ledsAus();
-    ergebnis = random(1, 6);
+    ergebnis = random(1, 7);
     Serial.println(ergebnis);
     
     delay(1000); //delay fühlt besser an.
