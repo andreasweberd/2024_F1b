@@ -1,0 +1,65 @@
+int DOinputPin = 5;
+int AOinputPin = 3;
+int outputPin5 = 13;
+int outputPin4 = 12;
+int outputPin3 = 11;
+int outputPin2 = 10;
+int outputPin1 = 9;
+
+
+void setup () {
+  Serial.begin(9600);
+  pinMode(5, INPUT);
+  pinMode(3, INPUT);
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+
+void loop () {
+  if(analogRead(AOinputPin)>=340){
+    digitalWrite(outputPin5, HIGH);
+    digitalWrite(outputPin4, HIGH);
+    digitalWrite(outputPin3, HIGH);
+    digitalWrite(outputPin2, HIGH);
+    digitalWrite(outputPin1, HIGH);
+    Serial.println(analogRead(AOinputPin));
+  }else if(analogRead(AOinputPin)>=330){
+    digitalWrite(outputPin5, LOW);
+    digitalWrite(outputPin4, HIGH);
+    digitalWrite(outputPin3, HIGH);
+    digitalWrite(outputPin2, HIGH);
+    digitalWrite(outputPin1, HIGH);
+  }else if(analogRead(AOinputPin)>=320){
+    digitalWrite(outputPin5, LOW);
+    digitalWrite(outputPin4, LOW);
+    digitalWrite(outputPin3, HIGH);
+    digitalWrite(outputPin2, HIGH);
+    digitalWrite(outputPin1, HIGH);
+  }else if(analogRead(AOinputPin)>=310){
+    digitalWrite(outputPin5, LOW);
+    digitalWrite(outputPin4, LOW);
+    digitalWrite(outputPin3, LOW);
+    digitalWrite(outputPin2, HIGH);
+    digitalWrite(outputPin1, HIGH);
+  }else if(analogRead(AOinputPin)>=300){
+    digitalWrite(outputPin5, LOW);
+    digitalWrite(outputPin4, LOW);
+    digitalWrite(outputPin3, LOW);
+    digitalWrite(outputPin2, LOW);
+    digitalWrite(outputPin1, HIGH);
+  }else{
+    Serial.println("zu leise");
+    Serial.println(analogRead(AOinputPin));
+    digitalWrite(outputPin5, LOW);
+    digitalWrite(outputPin4, LOW);
+    digitalWrite(outputPin3, LOW);
+    digitalWrite(outputPin2, LOW);
+    digitalWrite(outputPin1, LOW);
+  }
+
+delay(100);
+
+}

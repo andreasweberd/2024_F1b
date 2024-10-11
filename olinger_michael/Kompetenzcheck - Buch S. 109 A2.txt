@@ -1,0 +1,13 @@
+Kompetenzcheck - Aufgabe 2 - Seite 109:
+
+Diskutieren Sie in Arbeitsgruppen die unterschiedlichen QoS-Level und sammeln Sie Einsatzfelder für QoS 0, QoS 1 und QoS 2.
+
+	QoS 0 (At most once - höchstens einmal):
+		○ Einsatzfelder: Sensor-Datenübermittlung, Echtzeitanwendungen, bei denen Datenverlust unkritisch ist.
+		○ Beschreibung: Nachricht wird ohne Bestätigung gesendet. Kein Wiederholversuch bei Fehlern.
+	QoS 1 (At least once - mindestens einmal):
+		○ Einsatzfelder: Anwendungen, bei denen gelegentliche Duplikate tolerierbar sind, z.B. Statusupdates oder Log-Daten.
+		○ Beschreibung: Nachricht wird mindestens einmal zugestellt, kann aber dupliziert werden.
+	QoS 2 (Exactly once - genau einmal):
+		○ Einsatzfelder: Kritische Transaktionen, Zahlungsabwicklungen oder Steuerbefehle, bei denen Genauigkeit essenziell ist.
+        ○ Beschreibung: Nachricht wird genau einmal zugestellt, höchste Zuverlässigkeit, aber höherer Overhead (zusätzlicher Ressourcenaufwand).
