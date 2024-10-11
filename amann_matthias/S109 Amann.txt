@@ -1,0 +1,6 @@
+	• QoS 0 (At most once): Die Nachricht wird genau einmal gesendet, ohne Garantie, dass sie ankommt. Es erfolgt keine Wiederholung oder Bestätigung.
+Einsatzfeld: Geeignet für unkritische Anwendungen, z.B. Sensordaten, bei denen es nicht schlimm ist, wenn einzelne Nachrichten verloren gehen, wie bei der Übertragung von Temperaturdaten.
+	• QoS 1 (At least once): Die Nachricht wird mindestens einmal zugestellt. Der Sender erhält eine Bestätigung vom Empfänger, dass die Nachricht angekommen ist. Falls keine Bestätigung kommt, wird die Nachricht erneut gesendet, was zu Duplikaten führen kann.
+Einsatzfeld: Gut für Anwendungen, bei denen Zuverlässigkeit wichtig ist, aber gelegentliche Duplikate toleriert werden können, z.B. in Alarmierungssystemen.
+	• QoS 2 (Exactly once): Die Nachricht wird genau einmal zugestellt, ohne Duplikate oder Verluste. Es ist das zuverlässigste Level, erfordert aber mehr Netzwerkressourcen aufgrund des komplexeren Bestätigungsprozesses.
+Einsatzfeld: Kritische Anwendungen, bei denen keine Duplikate oder verlorenen Nachrichten toleriert werden können, z.B. Finanztransaktionen
