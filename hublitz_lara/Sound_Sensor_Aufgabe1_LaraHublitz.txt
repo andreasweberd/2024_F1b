@@ -1,0 +1,23 @@
+int noise  = 0;
+
+void setup() {
+
+Serial.begin(9600);
+
+pinMode(A0, INPUT);
+pinMode(4, OUTPUT);
+
+}
+
+void loop() {
+
+noise = analogRead(A0);
+
+Serial.println(noise);
+
+if (noise > 200){
+  digitalWrite(4, HIGH);
+}else{
+  digitalWrite(4, LOW);
+  }
+}
