@@ -1,5 +1,5 @@
 // Pin-Definitionen
-const int soundSensorPin = A0;   
+const int Pin = A0;   
 const int lampPin = 4;           
 int soundValue = 0;              
 
@@ -12,13 +12,13 @@ void setup() {
 
 void loop() {
   // Sound-Wert vom analogen Pin lesen
-  soundValue = analogRead(soundSensorPin);
+  soundValue = analogRead(Pin);
 
   // Sound-Wert im seriellen Monitor ausgeben
   Serial.print("Sound Sensor Value: ");
   Serial.println(soundValue);
 
-  // Wenn der Sound-Wert > 320 ist, Lampe einschalten
+  // Wenn der Sound-Wert > 360 ist, Lampe einschalten
   if (soundValue > 320) {
     digitalWrite(lampPin, HIGH);  // Lampe/LED an
     Serial.println("Lampe AN");
