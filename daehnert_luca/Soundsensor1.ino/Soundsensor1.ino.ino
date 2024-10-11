@@ -1,13 +1,13 @@
 // Pin-Definitionen
-const int soundSensorPin = A0;   // Sound-Sensor am analogen Pin A0 angeschlossen
-const int lampPin = 4;           // Lampe oder LED am digitalen Pin 4 angeschlossen
-int soundValue = 0;              // Variable zum Speichern des gelesenen analogen Werts
+const int soundSensorPin = A0;   
+const int lampPin = 4;           
+int soundValue = 0;              
 
 void setup() {
-  pinMode(lampPin, OUTPUT);      // Lampen-Pin auf Output setzen
-  digitalWrite(lampPin, LOW);    // Lampe/LED zunächst ausschalten
+  pinMode(lampPin, OUTPUT);      
+  digitalWrite(lampPin, LOW);    
   
-  Serial.begin(9600);            // Serielle Kommunikation starten
+  Serial.begin(9600);            
 }
 
 void loop() {
@@ -27,6 +27,6 @@ void loop() {
     Serial.println("Lampe AUS");
   }
 
-  // Kurze Verzögerung (optional)
+  
   delay(100);
 }
