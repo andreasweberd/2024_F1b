@@ -1,0 +1,18 @@
+QoS 0: At most once (Höchstens einmal)
+
+-Nachricht kann verloren gehen, keine Zustellgarantie
+Einsatz:
+Sensoren, die häufig Daten senden (z. B. Temperatur, Standort)
+Nicht-kritische Daten, bei denen der Verlust einiger Nachrichten akzeptabel ist
+
+QoS 1: At least once (Mindestens einmal)
+-Nachricht kommt mindestens einmal an, kann aber mehrfach zugestellt werden
+Einsatz:
+Alarm- und Benachrichtigungssysteme
+Anwendungen, bei denen Zustellung wichtiger ist als doppelte Nachrichten
+
+QoS 2: Exactly once (Genau einmal)
+Nachricht wird genau einmal zugestellt
+Einsatz:
+Kritische Anwendungen (z. B. Zahlungs- oder Bestellsysteme)
+Vermeidung von doppelten oder verlorenen Nachrichten

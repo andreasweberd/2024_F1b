@@ -1,0 +1,22 @@
+int sensor = 2;
+int LED = 12;
+int noise  = 0;
+ 
+void setup() {
+ 
+pinMode(8, INPUT);
+pinMode(4, OUTPUT);
+ 
+}
+ 
+void loop() {
+ 
+noise = analogRead(sensor);
+ 
+if (noise == 1){
+  digitalWrite(4, HIGH);
+}else{
+  digitalWrite(8, LOW);
+  }
+}
+ 

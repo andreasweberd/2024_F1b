@@ -1,0 +1,88 @@
+int ergebnis = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(5, INPUT);
+}
+
+void loop() {
+  if (digitalRead(5) == HIGH){
+    ledsAus();
+    delay(100);
+    ergebnis = random(1,7);
+    //Der Wert in der Leiste drüber ist veränderbar, so kann man einen Würfel basteln, der z.B. nur von 1-4 würfeln soll. Beinhaltet die Eingabe eine ungültige Zahl, wird die violette LED angesteuert, die einen Fehler repräsentiert.
+    Serial.println(ergebnis);
+
+    anzeigen(ergebnis);
+    delay(100);
+    }
+  }
+
+void anzeigen(int ergebnis){
+  if (ergebnis == 1){
+    digitalWrite(6, HIGH);
+  }
+
+  else if (ergebnis == 2){
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+  }
+
+  else if (ergebnis == 3){
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+  }
+
+  else if (ergebnis == 4){
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    digitalWrite(10, HIGH);
+  }
+
+  else if (ergebnis == 5){
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
+  }
+
+  else if (ergebnis == 6){
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
+    digitalWrite(12, HIGH);
+  }
+
+  else if (ergebnis > 6){
+    digitalWrite(9, HIGH);
+    Serial.print("Dies ist eine ungültige Zahl!");
+  }
+
+  else if (ergebnis < 1){
+    digitalWrite(9, HIGH);
+    Serial.print("Dies ist eine ungültige Zahl!");
+  }
+    
+}
+
+void ledsAus(){
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(12, LOW);
+}

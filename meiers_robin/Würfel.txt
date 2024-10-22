@@ -1,0 +1,77 @@
+int red1 = 6;
+int red2 = 7;
+int red3 = 8;
+int red4 = 9;
+int red5 = 10;
+int red6 = 11;
+int red7 = 12;
+
+int ergebnis = 0;
+
+int buttonPin = 5;
+
+int buttonState = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(red1, OUTPUT);
+  pinMode(red2, OUTPUT);
+  pinMode(red3, OUTPUT);
+  pinMode(red4, OUTPUT);
+  pinMode(red5, OUTPUT);
+  pinMode(red6, OUTPUT);
+  pinMode(red7, OUTPUT);
+
+  pinMode(buttonPin, INPUT);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (digitalRead(buttonPin) == HIGH) {
+    ergebnis = random(1, 7);
+    Serial.println(ergebnis);
+
+    ledsAus();
+
+    for (int i = 1; i <= ergebnis; i++)
+    {
+      anzeigen(i);
+    }
+  }
+
+  delay(100);
+}
+
+void ledsAus() {
+  digitalWrite(red1, LOW);
+  digitalWrite(red2, LOW);
+  digitalWrite(red3, LOW);
+  digitalWrite(red4, LOW);
+  digitalWrite(red5, LOW);
+  digitalWrite(red6, LOW);
+}
+
+void anzeigen(int ledNumber) {
+  switch (ledNumber) {
+    case 1:
+      digitalWrite(red1, HIGH);
+      break;
+    case 2:
+      digitalWrite(red2, HIGH);
+      break;
+    case 3:
+      digitalWrite(red3, HIGH);
+      break;
+    case 4:
+      digitalWrite(red4, HIGH);
+      break;
+    case 5:
+      digitalWrite(red5, HIGH);
+      break;
+    case 6:
+      digitalWrite(red6, HIGH);
+      break;
+  }
+}

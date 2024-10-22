@@ -1,0 +1,22 @@
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+  blink(5);
+}
+
+int blink(int blinks){
+  int x = 0;
+  if(x < blinks){
+    digitalWrite(9,HIGH);
+    delay(1000);
+    digitalWrite(9, LOW);
+    delay(1000);
+    x= x+1;
+  }else if(x > blinks){
+    digitalWrite(9, LOW);
+  }
+}
