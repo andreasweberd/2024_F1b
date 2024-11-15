@@ -1,0 +1,3 @@
+Bei MQTT handelt es sich um ein Übertragungsprotokoll, welches mit einem Publisher-Subscriber-Verfahren
+arbeitet. Die n-Clients treten als Publisher auf, der zentrale Broker als Subscriber. Es besteht keine direkte Verbindung zwischen den Geräten
+Anwendung findet MQTT besonders in einer Smart Factory, in der IoT Geräte (Sensoren etc.) ihre Informationen mit dem zentralen Broker teilen und dann verarbeitet werden.
