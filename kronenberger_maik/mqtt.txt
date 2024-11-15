@@ -1,0 +1,3 @@
+MQTT (Message Queuing Telemetry Protocol) ist ein Netzwerkprotokoll, welches speziell für die Kommunikation im IoT Bereich vorgesehen ist.
+Es ist ein sehr schlankes Protokoll, welches in einem Publish/Subscriber Modell und mit sog. QoS-Stufen funktioniert.
+Durch die QoS-Stufen werden Nachrichten je nach Wichtigkeit mindestens einmal oder genau einmal zugestellt.
