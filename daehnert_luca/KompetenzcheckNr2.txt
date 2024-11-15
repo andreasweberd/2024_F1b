@@ -1,0 +1,18 @@
+1. QoS 0 At most once (Maximal einmal)
+Beschreibung: Keine Garantie, dass die Nachricht ankommt. Keine Bestätigung oder Wiederholungen.
+Anwendungsfälle: Sensordaten, Log-Daten, Echtzeit-Streaming (Datenverlust ist akzeptabel).
+
+2. QoS 1 At least once (Mindestens einmal)
+Beschreibung: Nachrichten werden mindestens einmal gesendet; Duplikate sind möglich.
+Anwendungsfälle: Steuerbefehle, Finanztransaktionen, Benachrichtigungen (Zuverlässigkeit wichtig, Duplikate tolerierbar).
+
+3. QoS 2 Exactly once (Genau einmal)
+Beschreibung: Nachrichten werden genau einmal zugestellt, ohne Duplikate.
+Anwendungsfälle: Kritische Befehle, Finanz- und Transaktionsdaten, Datenbanksynchronisation (hohe Zuverlässigkeit, keine Duplikate).
+Jedes QoS-Level bietet unterschiedliche Garantien, passend zu verschiedenen Anforderungen an Zuverlässigkeit und Effizienz.
+
+
+
+
+
+

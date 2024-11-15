@@ -1,0 +1,13 @@
+void setup() {
+
+  pinMode(A1, INPUT);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  Serial.write(analogRead(A1));
+  delay(80);//
+}
+

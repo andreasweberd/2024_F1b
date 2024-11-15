@@ -1,0 +1,46 @@
+const int ledPin1 = 4;
+const int ledPin2 = 3;
+const int ledPin3 = 2;        
+const int sensorPin = 8;  
+const int analogsensor = A0;
+
+void setup() {
+
+  pinMode(ledPin1, OUTPUT); 
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);    
+  pinMode(sensorPin, INPUT);   
+  pinMode(analogsensor, INPUT);   
+  
+  Serial.begin(9600);          
+}
+
+void loop() {
+  int sensorValue = digitalRead(sensorPin);
+  int sensorValueAnalog = analogRead(analogsensor);
+
+  if (sensorValueAnalog > 50) {
+    digitalWrite(ledPin1, HIGH);  
+    Serial.println("led1");  
+  } else {
+    digitalWrite(ledPin1, LOW);    
+  }
+  if (sensorValueAnalog > 60) {
+    digitalWrite(ledPin2, HIGH);  
+    Serial.println("led2");  
+  } else {
+    digitalWrite(ledPin2, LOW);    
+  }
+    if (sensorValueAnalog > 70) {
+    digitalWrite(ledPin3, HIGH);  
+    Serial.println("led3");  
+  } else {
+    digitalWrite(ledPin3, LOW);    
+  }
+
+  Serial.print("Analoge Geräusche: ");
+  Serial.println(analogsensor);
+
+
+}
+

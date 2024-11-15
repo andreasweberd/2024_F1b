@@ -1,0 +1,18 @@
+int digitalSensor = 2;  
+int LED = 13;           
+
+void setup() {
+  pinMode(digitalSensor, INPUT);  // Sensor als Eingang weil nimmt Geräusche war
+  pinMode(LED, OUTPUT);           // LED als Ausgang weil leuchtet
+}
+
+void loop() {
+  int noise = digitalRead(digitalSensor);  // Wert vom Sensor lesen
+
+  if (noise == HIGH) {   // Wenn ein Geräusch erkannt wurde
+    digitalWrite(LED, HIGH);  
+  } else {
+    digitalWrite(LED, LOW);   
+  }
+}
+
