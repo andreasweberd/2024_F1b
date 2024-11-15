@@ -1,0 +1,4 @@
+MQTT (Message Queue Telemetry Transport) ist ein ressourcenschonendes Kommunikationsprotokoll, 
+das speziell für IoT Anwendungen entwickelt wurde. Es ermöglicht zuverlässige Datenübertragung auch bei geringer Bandbreite. 
+Dank des binärformats eignet es sich besonders für Anwendungen in der Hausautmatition, Echtzeitübertragung und Projekte mit
+begrenztem Energie- oder Dartenvolumen. 
