@@ -1,0 +1,6 @@
+Wie würden Sie das MQTT-Protokoll einordnen und den Einsatz von MQTT beschreiben?
+
+Das MQTT-Protokoll ist ein publish-subscribe-basiertes Messaging-Protokoll.
+MQTT kann zum Beispiel verwendet werden um Daten von Sensoren zu sammeln, diese Geräte zu steuern und Informationen 
+zwischen Geräten auszutauschen. Zusätzlich kann man es für ein Smart Home verwenden zum Beispiel zur Steuerung 
+mehrerer Lampen und Geräte wie Heizung.
