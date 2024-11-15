@@ -1,0 +1,21 @@
+#include "pitches.h"
+
+int buzzerPin = 8; 
+int achtel = 500;
+int viertel = achtel*2;
+int halbe = viertel*2;
+
+int melody[8][2] = {
+  {NOTE_C4, viertel} , {NOTE_C4, viertel}, {NOTE_D4, viertel}, {NOTE_E4, viertel}, {NOTE_E4, viertel}, {NOTE_D4, viertel}, {NOTE_C4, viertel}, {NOTE_C4, viertel}
+};
+
+void setup(){
+
+}
+
+void loop(){
+   for (int i = 0; i < 8; i++) {
+    tone(buzzerPin, melody[i][0]);  
+    delay(melody[i][1]);                                     
+  }
+}
