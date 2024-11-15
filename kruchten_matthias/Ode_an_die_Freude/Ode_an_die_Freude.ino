@@ -99,7 +99,7 @@ int note_2 = (notendauer / 2) *0.9;
 int note_4 = (notendauer / 4) * 0.9;
 
 
-void setup() // Im Setup werden keine Informationen benötigt.
+void setup() 
 {
 }
 
@@ -158,7 +158,7 @@ int notes = sizeof(ton);
 
 for (int i =0; i < notes; i++) {
   int tonn= ton[i];
-  int t = dauer[i] * 0.9;
+  int t = dauer[i]/0.9;
   int pause = dauer[i];
   tone(A8, tonn, t);
   delay(pause);
