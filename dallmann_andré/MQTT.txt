@@ -1,0 +1,2 @@
+MQTT ist ein schlanked Message Protocol für die Kommunikation zwischen Maschinen, es ermöglicht einen standartisierten austausch von Daten zwischen verschiedenen Plattformen/Maschinent mithilfe eines Brokers
+Es ermöglicht es die Daten nicht einfach nur zu Broadcasten sondern an bestimmte "Adressen" zu senden. 
