@@ -1,0 +1,6 @@
+Sie sollen das MQTT-Protokoll einordnen und den Einsatz von MQTT beschreiben können.
+
+Bei MQTT (Message Queuing Telemetry Transport) handelt es sich um ein Nachrichtenprotokoll. (Publisher-Subscriber-Protokoll)
+Es funktioniert dabei nach dem Client-Broker-Prinzip. Dabei werden Nachrichten über einen Broker 
+mit anderen Geräten oder Software geteilt. Als Beispiel können hier Sensoren Messdaten aufnehmen, welche über den Broker
+mit einer Software auf einem PC geteilt werden.
