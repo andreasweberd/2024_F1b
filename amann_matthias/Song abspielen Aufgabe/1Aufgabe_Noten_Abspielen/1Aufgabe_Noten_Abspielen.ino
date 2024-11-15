@@ -96,8 +96,6 @@ void setup() {
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
 
-//C D E F G A H C E E F G G F E D
-
 }
 
 void loop() {
@@ -105,7 +103,7 @@ void loop() {
   tone(buzzer, NOTE_C4, 500); 
   delay(500); 
 
-  tone(buzzer, NOTE_D4, 500); 
+  tone(buzzer, NOTE_E4, 500); 
   delay(500); 
 
   tone(buzzer, NOTE_E4, 500); 
@@ -117,38 +115,34 @@ void loop() {
   tone(buzzer, NOTE_G4, 500); 
   delay(500); 
 
-  tone(buzzer, NOTE_A4, 500); 
+  tone(buzzer, NOTE_G4, 500); 
   delay(500); 
 
-  tone(buzzer, NOTE_B4, 500); 
+  tone(buzzer, NOTE_F4, 500); 
+  delay(500); 
+
+  tone(buzzer, NOTE_E4, 500); 
+  delay(500); 
+
+  tone(buzzer, NOTE_D4, 500); 
   delay(500); 
 
   tone(buzzer, NOTE_C4, 500); 
   delay(500); 
 
-  tone(buzzer, NOTE_E4, 500); 
-  delay(500); 
-
-  tone(buzzer, NOTE_E4, 500); 
-  delay(500); 
-
-  tone(buzzer, NOTE_F4, 500); 
-  delay(500); 
-
-  tone(buzzer, NOTE_G4, 500); 
-  delay(500); 
-
-  tone(buzzer, NOTE_G4, 500); 
-  delay(500); 
-
-  tone(buzzer, NOTE_F4, 500); 
+  tone(buzzer, NOTE_D4, 500); 
   delay(500); 
 
   tone(buzzer, NOTE_E4, 500); 
   delay(500); 
 
   tone(buzzer, NOTE_D4, 500); 
+  delay(500); 
+
+  tone(buzzer, NOTE_C4, 500); 
+  delay(500); 
+
+  tone(buzzer, NOTE_C4, 500); 
   delay(5000); 
-
-
+ 
 }
