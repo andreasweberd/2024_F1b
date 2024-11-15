@@ -1,0 +1,7 @@
+Wie würdet ihr das MQTT-Protokoll einordnen und den Einsatz von MQTT beschreiben?
+
+
+MQTT-Protokoll (Message Queuing Telemetry Transport) ist ein Kommunikationsprotokoll, spezialisiert für den Einsatz im Netzwerk. 
+Es ist eine API(eine Schnittstelle) die Zugriff und Steuerung von Daten bereitstellt. Es biete verschiedene QoS-Level.
+
+Einsatz oft für IOT-Geräte, meist Smart-Home-Devices. Dient zur überwachung und Fernsteuerung dieser Geräte. Beispielsweise zur Ermittlung der Raumtemperatur von einem IOT-Thermometer, wodurch dann ein Regler(auch IOT) die Heizung hoch bzw herunterregeln kann.
