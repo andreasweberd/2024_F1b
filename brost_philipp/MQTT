@@ -1,0 +1,5 @@
+Seite 104
+
+MQTT-Protokoll (Message Queue Telemetry Transport), wurde für die Kommunikation zwischen Geräten entwickelt. Es wird im Internet of Things verwendet.
+Das MQTT-Protokoll ermöglicht die Übertragung von Daten mit geringem Netzwerkaufwand und ist daher für Umgebungen mit begrenzter Banbreite oder einer instabilen Verbindung gut geeignet.
+Außerdem ist es sehr ressourcenschonend und gut für kleine Geräte geeignet und bietet gute Zuverlässigkeit.
