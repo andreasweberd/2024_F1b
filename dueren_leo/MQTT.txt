@@ -1,0 +1,5 @@
+Wie würdet ihr das MQTT Protokol einordnen und es kurz beschreiben?
+
+Das MQTT Protokol ist ein standartisiertes Client-Broker Protokoll, mit dem es möglich ist Datenausgaben von Clients über den Broker and Subscribed-Clients zu verteilen.
+Dies wäre zum Beispiel bei einer Produktionwaage sinnvoll, da die Daten so an nur die Geräte verteilt werden, welche sie auch wirklich benötigen.
+Um das Ankommen der Daten zu gewähleisten, kann man den Qol so einstellen, dass es solang versucht wird die Daten zu einem Subscribed-Client zu senden bis dieser meldet, dass sie angekommen sind.

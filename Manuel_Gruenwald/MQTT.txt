@@ -1,0 +1,7 @@
+Sie sollen das MQTT Protokoll einordnen und den Einsatz von MQTT beschreiben können:
+
+Das MQTT-Protokoll hat sich zu einem Standard für die IoT-Datenübertragung entwickelt, da es Zuverlässig und sicher ist.
+
+Die Sender (Publisher) und der Abonnent (Subscriber) treten nie direkt miteinander in Kontakt. Tatsächlich sind sie sich nicht einmal bewusst, dass der andere existiert. Die Verbindung zwischen ihnen wird von einer dritten Komponente, dem MQTT Broker abgewickelt. Die Aufgabe des Brokers ist es, alle eingehenden Nachrichten zu filtern und sie korrekt an die Abonnenten zu verteilen. Der MQTT-Broker steht im Mittelpunkt jedes Publish / Subscribe Protokolls und er kann bis zu Tausende gleichzeitig verbundene MQTT Client verwalten. 
+
+Jeder Teilnehmer kann Daten an den Broker senden. Als Beispiel hier ein Temperatursensor. Der sendet die Daten genannt Payload, hier 20 °C an das Topic: „temperatur“. Das Topic ist das Thema (Betreff) für die Daten. Jeder Teilnehmer der das Topic „temperatur“ abonniert hat, bekommt vom Broker die Daten übermittelt.
