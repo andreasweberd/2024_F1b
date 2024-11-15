@@ -1,1 +1,3 @@
-MQTT wird bei sehr kleinen IT Systemen genutzt um so eine Echtzeit übertragung mit sehr kleinen Datenpaketen zuermöglichen ein Beispiel der Ardoino nutzt dies.
+MQTT wird bei sehr kleinen IT Systemen genutzt um sogut wie Echtzeit übertragung mit sehr kleinen Datenpaketen zuermöglichen ein Beispiel der Ardoino nutzt dies.
+
+Das funktioniert so das man als das der Sender ein Datenpaket versendet ohne das der empfänger das Bestätigen muss
