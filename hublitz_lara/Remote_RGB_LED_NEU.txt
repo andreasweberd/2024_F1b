@@ -1,0 +1,87 @@
+#include <IRremote.hpp>
+
+const int IR_RECEIVE_PIN = 7;
+
+const int RED = 6;
+const int BLUE = 3;
+const int GREEN = 5;
+
+void setup(){
+  Serial.begin(9600);
+  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
+  IrReceiver.blink13(true);
+  pinMode(RED,OUTPUT);
+  pinMode(BLUE,OUTPUT);
+  pinMode(GREEN,OUTPUT);
+  Serial.println("a]to turn on RED light press 1\nb]to turn on BLUE light press 2\nc]to turn on BLUE light press 3");
+}
+
+void loop(){
+  if (IrReceiver.decode()) {
+      switch (IrReceiver.decodedIRData.decodedRawData)
+      { 
+        case 0xCF30FF00://HEX code for button 1
+        digitalWrite(RED,HIGH);
+        digitalWrite(GREEN,LOW);
+        digitalWrite(BLUE,LOW);
+        Serial.println("RED");
+        break;
+        
+        case 0xE718FF00://HEX code for button 2
+        digitalWrite(RED,LOW);
+        digitalWrite(GREEN,HIGH);
+        digitalWrite(BLUE,LOW);
+        Serial.println("GREEN");
+        break;
+
+        case 0x857AFF00://HEX code for button 3
+        digitalWrite(RED,LOW);
+        digitalWrite(GREEN,LOW);
+        digitalWrite(BLUE,HIGH);
+        Serial.println("BLUE");
+        break;
+
+        case 0xEF10FF00://HEX code for button 4
+        digitalWrite(RED,HIGH);
+        digitalWrite(GREEN,LOW);
+        digitalWrite(BLUE,HIGH);
+        Serial.println("MAGENTA");
+        break;
+
+        case 0xC738FF00://HEX code for button 5
+        digitalWrite(RED,HIGH);
+        digitalWrite(GREEN,HIGH);
+        digitalWrite(BLUE,LOW);
+        Serial.println("YELLOW");
+        break;
+
+        case 0xA55AFF00://HEX code for button 6
+        digitalWrite(RED,LOW);
+        digitalWrite(GREEN,HIGH);
+        digitalWrite(BLUE,HIGH);
+        Serial.println("CYAN");
+        break;
+
+        case 0xBD42FF00://HEX code for button 7
+        digitalWrite(RED,HIGH);
+        digitalWrite(GREEN,HIGH);
+        digitalWrite(BLUE,HIGH);
+        Serial.println("WHITE");
+        break;
+
+        case 0x5DA2FF00:
+        digitalWrite(RED,LOW);
+        digitalWrite(GREEN,LOW);
+        digitalWrite(BLUE,LOW);
+        Serial.println("OFF");
+        break;
+
+        default:
+        Serial.print("Unrecognized code received: 0x");
+        Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
+        break;        
+      }
+
+      IrReceiver.resume();
+  }
+}
