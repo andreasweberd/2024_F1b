@@ -1,0 +1,65 @@
+#define ARRAY_SIZE 1000
+#define BUZZER_PIN 8
+
+uint8_t data[ARRAY_SIZE];
+
+void generateRandomNumbers() {
+    for (int i = 0; i < ARRAY_SIZE; i++) {
+        data[i] = random(0, 256);
+    }
+}
+
+void bubbleSort(uint8_t arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        bool swapped = false;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                uint8_t temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
+    }
+}
+
+// (Piep)
+void beep(int duration) {
+    tone(BUZZER_PIN, 1000, duration);
+    delay(duration + 50);  // Pause
+}
+
+void setup() {
+    Serial.begin(9600);
+    randomSeed(analogRead(0));
+
+    pinMode(BUZZER_PIN, OUTPUT);
+    digitalWrite(BUZZER_PIN, LOW);
+
+    Serial.println("Generating random numbers...");
+    generateRandomNumbers();
+
+    //  (1 Piep)
+    beep(100);
+
+    Serial.println("Sorting...");
+    unsigned long startTime = millis();
+
+    bubbleSort(data, ARRAY_SIZE);
+
+    unsigned long endTime = millis();
+
+    //  (2 Piep)
+    beep(100);
+    delay(200);
+    beep(100);
+
+    Serial.print("Sorting time: ");
+    Serial.print(endTime - startTime);
+    Serial.println(" ms");
+}
+
+void loop() {
+    // Ende
+}
