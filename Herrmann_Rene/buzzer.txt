@@ -1,0 +1,62 @@
+uint8_t data[ARRAY_SIZE];
+
+void generateRandomNumbers() {
+    for (int i = 0; i < ARRAY_SIZE; i++) {
+        data[i] = random(0, 256);
+    }
+}
+
+void bubbleSort(uint8_t arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        bool swapped = false;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                uint8_t temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
+    }
+}
+
+// Function to play a short beep using tone()
+void beep(int duration) {
+    tone(BUZZER_PIN, 1000, duration);
+    delay(duration + 50);  // Small delay to prevent overlapping tones
+}
+
+void setup() {
+    Serial.begin(9600);
+    randomSeed(analogRead(0));
+
+    pinMode(BUZZER_PIN, OUTPUT);
+    digitalWrite(BUZZER_PIN, LOW);
+
+    Serial.println("Generating random numbers...");
+    generateRandomNumbers();
+
+    // Start signal (1 beep)
+    beep(100);
+
+    Serial.println("Sorting...");
+    unsigned long startTime = millis();
+
+    bubbleSort(data, ARRAY_SIZE);
+
+    unsigned long endTime = millis();
+
+    // End signal (2 beeps)
+    beep(100);
+    delay(200);
+    beep(100);
+
+    Serial.print("Sorting time: ");
+    Serial.print(endTime - startTime);
+    Serial.println(" ms");
+}
+
+void loop() {
+    // Do nothing after sorting
+}

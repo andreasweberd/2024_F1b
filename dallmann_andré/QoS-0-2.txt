@@ -1,0 +1,14 @@
+QoS Level bei MQTT und Einsatzfelder. 
+
+1. QoS 0 – At most once (Maximal einmal)
+   - Beschreibung: Nachricht wird ohne Bestätigung gesendet. Keine Garantie, dass sie ankommt.
+   - Einsatzfelder: Unkritische Anwendungen, z.B. Sensoren, die regelmäßig Daten wie Temperatur senden.
+
+2. QoS 1 – At least once (Mindestens einmal)
+   - Beschreibung: Nachricht wird mindestens einmal zugestellt, Duplikate möglich.
+   - Einsatzfelder: Wichtige Daten, die nicht verloren gehen dürfen, wie z.B. Bestellbestätigungen.
+
+3. QoS 2 – Exactly once (Genau einmal)
+   - Beschreibung: Nachricht wird genau einmal zugestellt, ohne Duplikate.
+   - Einsatzfelder: Kritische Anwendungen, z.B. Finanztransaktionen oder Maschinensteuerungen.
+
