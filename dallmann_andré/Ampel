@@ -1,0 +1,80 @@
+class Ampel(object):
+
+    def __init__(self, anfangszustand, tageszeit):
+
+        self.zustand = anfangszustand
+
+        self.tageszeit = tageszeit
+ 
+    def setZustand(self, z):
+
+        self.zustand = z
+ 
+    def schalten(self):
+
+        if self.tageszeit = "tag":
+
+            if self.zustand == 'rot':
+
+                self.zustand = 'rotgelb'
+
+            elif self.zustand = "rotgelb"
+
+                self.zustand = "gelb"
+
+            elif self.zustand = "gelb"
+
+                self.zustand = "gelbgrün"
+
+            elif self.zustand = "gelbgrün"
+
+                self.zustand = "grün"
+
+        if self.tageszeit = "nacht":
+
+            self.zustand = "aus"
+ 
+    def getLampen(self):
+
+        if self.zustand == 'rot':
+
+            lampen = (True, False, False)
+
+        elif self.zustand = "gelbrot"
+
+            lampen = (True, True, False)
+
+        elif self.zustand = "gelb":
+
+            lampen = (False, True, False)
+
+        elif self.zustand = "gelbgrün":
+
+            lampen = (False, True, True)
+
+        elif self.zustand = "grün":
+
+            lampen = (False, False, True)
+
+        elif self.zustand == "aus":
+
+            lampen = (False, False, False)
+
+    def tageszeitWechseln(self):
+
+        if tageszeit = "tag":
+
+            self.tageszeit = "nacht"
+
+        elif tageszeit = "nacht":
+
+            self.tageszeit = "tag"
+
+
+        return lampen
+
+
+        a = Ampel("rot", "tag")
+
+        print(a.getLampen())
+ 
