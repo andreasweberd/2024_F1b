@@ -1,0 +1,47 @@
+#include <LiquidCrystal.h>
+
+#define PIN_LCD_RS 6              // Pin für LCD-Pin RS (Register Select)
+#define PIN_LCD_E 7               // Pin für LCD-Pin E  (Enable)
+#define PIN_LCD_D4 8              // Pin für LCD-Pin D4 (Datenbit 4)
+#define PIN_LCD_D5 9              // Pin für LCD-Pin D5 (Datenbit 5)
+#define PIN_LCD_D6 10             // Pin für LCD-Pin D6 (Datenbit 6)
+#define PIN_LCD_D7 11             // Pin für LCD-Pin D7 (Datenbit 7)
+
+#define LCD_ROWS 2                // Anzahl der Zeilen des Displays.
+#define LCD_COLS 16               // Anzahl der Spalten des Displays.
+
+LiquidCrystal lcd(PIN_LCD_RS, PIN_LCD_E, PIN_LCD_D4, PIN_LCD_D5, PIN_LCD_D6, PIN_LCD_D7);
+int aSeconds = 0;
+const int trigPin = 3;  
+const int echoPin = 5; 
+
+float duration, distance;  
+
+void setup()
+{
+  lcd.begin(LCD_COLS, LCD_ROWS);  // Die Größe des Displays festlegen und das Display intialisieren.
+  lcd.setCursor(0, 0);            // Springe mit dem Cursor in der 1. Zeile an Position 1.
+  lcd.print("Distanz:");     // Schreibe ab dort den Text "Sekunden seit".
+  lcd.setCursor(0, 1);            // Springe mit dem Cursor in der 2. Zeile an Position 1.
+  pinMode(trigPin, OUTPUT);  
+	pinMode(echoPin, INPUT);  
+	Serial.begin(9600); 
+
+}
+
+void loop()
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration*.0343)/2;
+
+  lcd.setCursor(7, 1);            // Springe mit dem Cursor in der 2. Zeile an Position 8.
+  lcd.print(distance);            // Schreibe ab dort den aktuellen Wert der Variable aSeconds.
+
+  delay(100);                    // Warte eine Sekunde.
+}

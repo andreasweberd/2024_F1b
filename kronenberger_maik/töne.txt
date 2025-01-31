@@ -1,0 +1,42 @@
+const int tonePin = 9;
+const int s1_tones[] = {330, 330, 349, 392, 392, 349, 330, 294, 262, 262, 294, 330};
+const int s1_delays[] = {600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600};
+
+const int s2_tones[] = {294, 294, 330, 262, 294, 330, 349, 330, 262, 294, 330, 349, 330, 294, 262, 294};
+const int s2_delays[] = {600, 600, 600, 600, 600, 300, 300, 600, 600, 600, 300, 300, 600, 600, 600, 600};
+
+
+void setup() {
+  // put your setup code here, to run once:
+  playSequence(s1_tones, s1_delays, sizeof(s1_tones) / sizeof(s1_tones[0]));
+  tone(tonePin, 330);
+  delay(900);
+  tone(tonePin, 294);
+  delay(300);
+  tone(tonePin, 294);
+  delay(1200);
+  playSequence(s1_tones, s1_delays, sizeof(s1_tones) / sizeof(s1_tones[0]));
+  tone(tonePin, 294);
+  delay(900);
+  tone(tonePin, 262);
+  delay(300);
+  tone(tonePin, 262);
+  delay(1200);
+  playSequence(s2_tones, s2_delays, sizeof(s2_tones) / sizeof(s2_tones[0]));
+  tone(tonePin, 330);
+  playSequence(s1_tones, s1_delays, sizeof(s1_tones) / sizeof(s1_tones[0]));
+  noTone(tonePin);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+}
+
+void playSequence(const int tones[], const int delays[], int length) {
+  for (int i = 0; i < length; i++) {
+    tone(tonePin, tones[i]);
+    delay(delays[i]);
+  }
+}
+
+

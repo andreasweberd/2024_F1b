@@ -1,0 +1,46 @@
+#include "pitches.h"
+#define BUZZER_PIN 8
+
+
+int viertel = 250;  // Kürzere Dauer, z.B. 250 ms statt 1000 ms
+int achtel = 125;   //  Achtel-Noten kürzer, z.B. 125 ms
+int halbe = 500;    // Halbe Noten, z.B. 500 ms
+int viertelmitachtelkombiniert = viertel + achtel;
+
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+
+  int melody[30][2] = {
+
+    {NOTE_E4, viertel}, {NOTE_E4, viertel}, {NOTE_F4, viertel}, {NOTE_G4, viertel},
+    {NOTE_G4, viertel}, {NOTE_F4, viertel}, {NOTE_E4, viertel}, {NOTE_D4, viertel},
+    {NOTE_C4, viertel}, {NOTE_C4, viertel}, {NOTE_D4, viertel}, {NOTE_E4, viertel},
+    {NOTE_E4, viertel}, {NOTE_D4, viertelmitachtelkombiniert}, {NOTE_D4, halbe},
+    
+    {NOTE_E4, viertel}, {NOTE_E4, viertel}, {NOTE_F4, viertel}, {NOTE_G4, viertel},
+    {NOTE_G4, viertel}, {NOTE_F4, viertel}, {NOTE_E4, viertel}, {NOTE_D4, viertel},
+    {NOTE_C4, viertel}, {NOTE_C4, viertel}, {NOTE_D4, viertel}, {NOTE_E4, viertel},
+    {NOTE_D4, viertelmitachtelkombiniert}, {NOTE_C4, achtel}, {NOTE_C4, halbe}
+    
+};
+ 
+      for (int i=0; i <= sizeof(melody); i++){
+ 
+tone(8, melody[i][0], melody[i][1]);
+ 
+int pauseBetweenNotes = melody[i][1] * 1.30;
+ 
+ 
+    delay(pauseBetweenNotes);
+        
+    noTone(8);
+ 
+ 
+       
+      } // put your main code here, to run repeatedly:
+
+}
