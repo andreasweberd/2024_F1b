@@ -1,0 +1,7 @@
+MQTT
+Das MQTT wird als offenes Netzwerkprotokoll genutzt, sodass verschiedene Geräte anhand von Nachrichten miteinander kommunizieren können. 
+Die Datenpakete werden trotz einer hohen Verzögerung oder eines beschränkten Netzwerkes transportiert.
+
+Geräte, die Daten mit begrenzter Bandbreite senden und empfangen müssen, verwenden MQTT, da somit diese sensiblen Daten geschützt werden können. 
+Die Kommunikation geschieht dabei auf Basis eines SSL-Protokolls. 
+Das MQTT besitzt allerdings keinen Sicherheitsmechanismus, weshalb es nicht unabhängig für die automatisierte Steuerung von Maschinen genutzt werden soll.

@@ -1,0 +1,4 @@
+Sie sollen das MQTT-Protokoll einordnen und den Einsatz von MQTT beschreiben können.:
+
+Das MQTT-Protokoll ist ein einfaches Protokoll, das oft im Internet of Things (IoT) verwendet wird. Dabei senden Geräte (Publisher) Daten (z.b. Sensorikdaten) an einen Server (Broker), und andere Geräte können diese Themen „abonnieren“ (subscriben), um die Daten zu empfangen. Im Gegensatz zu Client-Server Modellen gibt es bei MQTT keine Direkte Verbindung zwischen Publisher und Subscriber, sondern alles wird über den Broker vermittelt.
+Innerhalb des MQTT gibt es drei Quality of Service (QoS) Level, die die Zuverlässigkeit der Nachrichtenvermittlung regelt; QoS 0 (At most once) QoS 1 (At least once) und QoS 2 (Exactly once). Diese Regeln wie oft die Daten geschickt, bzw. Empfangen werden.

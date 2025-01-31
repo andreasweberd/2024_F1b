@@ -1,0 +1,3 @@
+MQTT ist ein Protokoll, das Geräte verbindet und Daten austauscht.
+Es wird oft im Smart Home, in der Industrie, in der Logistik und in der Medizin verwendet, vor allem für das IoT.
+Es ist schnell, zuverlässig und ressourcenschonend.

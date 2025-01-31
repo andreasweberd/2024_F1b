@@ -1,0 +1,6 @@
+Arbeitsauftrag Buch, S. 104 – MQTT
+„Wie würdet ihr das MQTT-Protokoll einordnen und den Einsatz von MQTT beschreiben können.“
+MQTT ist ein schlankes Übertragungsprotokoll, das zur Kommunikation zwischen IOT-Geräten dient. 
+Trotz hoher Verzögerungen im Netzwerk ermöglicht MQTT eine Übertragung von Datenpaketen in Form von Nachrichten. 
+MQTT wird oft bei IOT-Geräten eingesetzt, die Sensordaten an eine zentrale Steuerung schicken, oder auch in der Industrie, um Maschinendaten zu überwachen. 
+

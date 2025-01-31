@@ -1,0 +1,17 @@
+void setup() {
+ pinMode (A1, INPUT); //analoge Verbindung
+ pinMode (8, OUTPUT);
+
+
+ Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println(analogRead(A1)); //aktuellen Wert von Pin A1 ausgeben
+  delay(80); //80ms warten
+
+}
+
+
+//hat noch nicht funktioniert
+//an Schraube drehen 

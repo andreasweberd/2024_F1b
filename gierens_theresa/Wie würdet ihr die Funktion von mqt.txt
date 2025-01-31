@@ -1,0 +1,3 @@
+Wie würdet ihr die Funktion von mqttp in eigenen Worten beschreiben?
+
+ MQTTP ist ein IoT Protokoll. Es arbeitet nach dem Publish Subscribe Prinzip, also Clients können Daten zu einem Thema veröffentlichen oder sich für ein Thema anmelden, um diese Daten zu dem jeweiligen Thema zu empfangen. Die Kommunikation läuft dabei über einen zentralen Server, den Broker. Dieser verwaltet die Themen und sorgt dafür dass die richtigen Clients die Nachrichten der abbonierten Themen bekommen.

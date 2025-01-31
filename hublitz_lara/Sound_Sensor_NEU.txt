@@ -1,0 +1,20 @@
+void setup() {
+
+Serial.begin(9600);
+
+pinMode(8, INPUT);
+pinMode(4, OUTPUT);
+
+}
+
+void loop() {
+
+int statusSensor = digitalRead(8);
+
+if (statusSensor == 1){
+  digitalWrite(4, HIGH);
+
+}else{
+  digitalWrite(4, LOW);
+  }
+}

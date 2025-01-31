@@ -1,0 +1,26 @@
+1.
+
+- Stromverbrauch
+- Reichweite
+- Datenrate
+- Latenz
+- Kosten
+
+2.
+
+a) Falsch – MQTT ist ein Protokoll der Anwendungsschicht, nicht der Transportschicht.
+
+b) Richtig
+
+c) Richtig
+
+d) Falsch – RFID funktioniert oft bis zu einer Distanz von etwa 10 Metern, je nach Frequenz und Typ, kann jedoch bei Hochfrequenz-RFID-Systemen 
+(HF und UHF) auch größere Reichweiten erreichen.
+
+
+Was ist ein MQTT-Protokoll?
+
+Das MQTT-Protokoll (Message Queue Telemetry Transport) ist ein schlankes Messaging-Protokoll, das speziell für das Internet der Dinge 
+(IoT) entwickelt wurde. Ursprünglich wurde es 1999 in den USA entworfen, um eine Öl-Pipeline in der Wüste zu überwachen, und hat seitdem 
+an Beliebtheit in verschiedenen Anwendungsbereichen, wie der Hausautomation und Open-Source-Projekten, gewonnen. Seit 2014 ist MQTT ein 
+offiziell anerkannter Standard der Organisation OASIS.
