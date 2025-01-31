@@ -1,0 +1,38 @@
+int soundSensorPin = A0;  
+int ledPin1 = 4;          // LED 1 an Pin 4
+int ledPin2 = 2;          // Neue LED an Pin 2
+int threshold1 = 110;     // Schwellenwert für LED 1
+int threshold2 = 120;      // Schwellenwert für LED 2
+
+void setup() {
+  pinMode(ledPin1, OUTPUT);  // Setzt LED 1 als Ausgang
+  pinMode(ledPin2, OUTPUT);  // Setzt LED 2 als Ausgang
+  Serial.begin(9600);        // Startet die serielle Kommunikation
+}
+
+void loop() {
+  int sensorValue = analogRead(soundSensorPin);  // Liest den analogen Wert vom Sound-Sensor
+  
+  Serial.print("Sound Sensor Value: ");
+  Serial.println(sensorValue);  // Zeigt den aktuellen Wert des Sensors in der Konsole an
+  
+  
+  if (sensorValue > threshold1) {
+    digitalWrite(ledPin1, HIGH);  // Schaltet LED 1 an
+    Serial.println("Lautes Geräusch erkannt! LED 1 AN");
+  } else {
+    digitalWrite(ledPin1, LOW);   // Schaltet LED 1 aus
+    Serial.println("Kein lautes Geräusch. LED 1 AUS");
+  }
+
+  
+  if (sensorValue > threshold2) {
+    digitalWrite(ledPin2, HIGH);  // Schaltet LED 2 an
+    Serial.println("Geräusch erkannt! LED 2 AN");
+  } else {
+    digitalWrite(ledPin2, LOW);   // Schaltet LED 2 aus
+    Serial.println("Kein Geräusch erkannt. LED 2 AUS");
+  }
+  
+  delay(100);  
+}

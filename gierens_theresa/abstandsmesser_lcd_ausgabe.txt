@@ -1,0 +1,48 @@
+#include <LiquidCrystal.h>
+
+#define PIN_LCD_V0 5                      // Pin für Kontrastwert
+#define PIN_LCD_RS 6                      // Pin für Register Select
+#define PIN_LCD_E 7                       // Pin für Enable
+#define PIN_LCD_D4 8                      // Pin für Datenbit 4
+#define PIN_LCD_D5 9                      // Pin für Datenbit 5
+#define PIN_LCD_D6 10                     // Pin für Datenbit 6
+#define PIN_LCD_D7 11                     // Pin für Datenbit 7
+
+#define LCD_CONTRAST 125                  // Kontrastwert (muss experimentell an das LCD angepasst werden)
+#define LCD_ROWS 2                        // Anzahl der Zeilen des Displays.
+#define LCD_COLS 16                       // Anzahl der Spalten des Displays.
+
+LiquidCrystal lcd(PIN_LCD_RS, PIN_LCD_E, PIN_LCD_D4, PIN_LCD_D5, PIN_LCD_D6, PIN_LCD_D7);
+
+const int trigPin = 3;
+const int echoPin = 2;
+long duration;
+float distanceCm;  // Verwenden wir weiterhin int für die Ausgabe
+
+void setup() {
+    lcd.begin(16, 2);  // Initialisiere das LCD-Display
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+}
+
+void loop() {
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+
+    duration = pulseIn(echoPin, HIGH);
+    distanceCm = duration * 0.034 / 2;  // Berechnung der Distanz
+
+    lcd.setCursor(0, 0);  // 1. Zeile
+    lcd.print("Distanz:");
+
+    lcd.setCursor(0, 1);  // 2. Zeile für die Zahlenanzeige
+    lcd.print("            ");  // Alte Zeichen überschreiben
+    lcd.setCursor(0, 1);  // Zurück zum Anfang der 2. Zeile
+    lcd.print(distanceCm);
+    lcd.print(" cm");
+
+    delay(500);  // Verzögerung für stabilere Ausgabe
+}
