@@ -1,0 +1,52 @@
+const int arraySize = 1000;
+int arr[arraySize];
+
+void setup() {
+  Serial.begin(9600);
+
+  // Initialize random number generator
+  randomSeed(analogRead(0));
+
+  // Generate 100 random numbers between 0 and 1000
+  for (int i = 0; i < arraySize; i++) {
+    arr[i] = random(1000);
+  }
+
+  Serial.println("\nOriginal Array:");
+  printArray(arr, arraySize);
+
+  Serial.println("\nSorted Array:");
+  printArray(arr, arraySize); 
+}
+
+
+void loop() {
+  unsigned long startTime = millis(); // Start time
+  bubbleSort(arr);
+  unsigned long endTime = millis();   // End time
+
+  Serial.print("\nSorting Time: ");
+  Serial.print(endTime - startTime);
+  Serial.println(" ms");
+}
+
+void bubbleSort(int arr[]) {
+  for (int i = 0; i < arraySize - 1; i++) {
+    for (int j = 0; j < arraySize - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        int temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+
+// Function to print the array to Serial Monitor
+void printArray(int arr[], int size) {
+  for (int i = 0; i < size; i++) {
+    Serial.print(arr[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
+}

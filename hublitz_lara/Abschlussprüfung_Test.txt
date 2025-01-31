@@ -1,0 +1,30 @@
+const int arraySize = 1000;
+int cpuwerte[arraySize];
+
+void setup() {
+  Serial.begin(9600);
+
+  // Initialize random number generator
+  randomSeed(analogRead(0));
+}
+
+
+void loop() {
+
+  for (int i = 0; i < arraySize; i++) {
+    cpuwerte[i] = random(1000);
+  }
+
+
+  int summstd = 0;
+  for(int i = 0; i<24; i++){
+    if(cpuwerte[i]>80){
+      summstd++;
+    }
+  }
+  if(summstd>18){
+    Serial.println("oh shit");
+  }
+}
+
+
