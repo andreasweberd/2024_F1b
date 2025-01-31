@@ -1,0 +1,72 @@
+#define ARRAY_SIZE 1000
+#define SPEAKER_PIN 9
+
+int arr[ARRAY_SIZE];
+
+void setup() {
+  // Start the serial communication
+  Serial.begin(9600);
+  pinMode(SPEAKER_PIN, OUTPUT);
+
+  // Beep to indicate start
+  beep(1, 100); // 1 beeps of 100 ms each
+
+  // Initialize the array with random values
+  randomSeed(analogRead(0)); // Use analog input as a random seed
+  for (int i = 0; i < ARRAY_SIZE; i++) {
+    arr[i] = random(0, 10000); // Random integers between 0 and 9999
+  }
+
+  // Measure time taken for sorting
+  unsigned long startTime = millis();
+  bubbleSort(arr, ARRAY_SIZE);
+  unsigned long endTime = millis();
+
+  // Beep to indicate completion
+  beep(1, 100); // 1 beeps of 100 ms each
+
+  // Print the time taken
+  Serial.print("Time taken to sort: ");
+  Serial.print(endTime - startTime);
+  Serial.println(" milliseconds");
+}
+
+void loop() {
+  // Nothing to do here
+}
+
+// Bubble Sort algorithm
+void bubbleSort(int array[], int size) {
+  for (int i = 0; i < size - 1; i++) {
+    for (int j = 0; j < size - i - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        // Swap the elements
+        int temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
+    }
+  }
+}
+
+// Optional function to print the array
+void printArray() {
+  for (int i = 0; i < ARRAY_SIZE; i++) {
+    Serial.print(arr[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
+}
+
+// Function to beep a given number of times
+void beep(int count, int duration) {
+  for (int i = 0; i < count; i++) {
+    digitalWrite(SPEAKER_PIN, HIGH);
+    delay(duration);
+    digitalWrite(SPEAKER_PIN, LOW);
+    delay(duration);
+  }
+}
+
+
+
