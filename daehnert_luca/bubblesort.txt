@@ -1,65 +1,82 @@
-#define ARRAY_SIZE 1000
+#define ARRAY_SIZE 1000 
 #define BUZZER_PIN 8
 
 uint8_t data[ARRAY_SIZE];
 
-void generateRandomNumbers() {
-    for (int i = 0; i < ARRAY_SIZE; i++) {
-        data[i] = random(0, 256);
-    }
-}
-
-void bubbleSort(uint8_t arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        bool swapped = false;
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                uint8_t temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                swapped = true;
-            }
-        }
-        if (!swapped) break;
-    }
-}
-
-// (Piep)
-void beep(int duration) {
-    tone(BUZZER_PIN, 1000, duration);
-    delay(duration + 50);  // Pause
-}
+// Funktionsprototypen
+void generateRandomNumbers();
+void bubbleSort(uint8_t arr[], int n);
+void beep(int duration);
 
 void setup() {
+    // Serielle Kommunikation starten
     Serial.begin(9600);
-    randomSeed(analogRead(0));
+    randomSeed(analogRead(0)); // Zufallszahlengenerierung initialisieren
 
+    // Buzzer Pin als Ausgang definieren
     pinMode(BUZZER_PIN, OUTPUT);
-    digitalWrite(BUZZER_PIN, LOW);
+    digitalWrite(BUZZER_PIN, LOW); // Buzzer ausschalten
 
-    Serial.println("Generating random numbers...");
-    generateRandomNumbers();
+    Serial.println("Generiere Zufallszahlen...");
+    generateRandomNumbers(); // Zufallszahlen generieren
 
-    //  (1 Piep)
+    // Startsignal (1 Piepton)
     beep(100);
 
-    Serial.println("Sorting...");
-    unsigned long startTime = millis();
-
-    bubbleSort(data, ARRAY_SIZE);
-
-    unsigned long endTime = millis();
-
-    //  (2 Piep)
-    beep(100);
-    delay(200);
-    beep(100);
-
-    Serial.print("Sorting time: ");
-    Serial.print(endTime - startTime);
-    Serial.println(" ms");
+    Serial.println("Sortiere...");
 }
 
 void loop() {
-    // Ende
+    static bool sorted = false; // Zustand, um zu verhindern, dass die Sortierung mehrfach ausgeführt wird
+
+    if (!sorted) {
+        unsigned long startTime = millis(); // Startzeit für die Sortierung
+
+        bubbleSort(data, ARRAY_SIZE); // Bubble Sort aufrufen
+
+        unsigned long endTime = millis(); // Endzeit für die Sortierung
+
+        // Endsignal (2 Pieptöne)
+        beep(100);
+        delay(200); // Kurze Pause
+        beep(100);
+
+        // Sortierzeit ausgeben
+        Serial.print("Sortierzeit: ");
+        Serial.print(endTime - startTime);
+        Serial.println(" ms");
+
+        sorted = true; // Markiere, dass die Sortierung abgeschlossen ist
+    }
+
+    
+}
+
+// Funktion zur Generierung von Zufallszahlen
+void generateRandomNumbers() {
+    for (int i = 0; i < ARRAY_SIZE; i++) {
+        data[i] = random(0, 256); // 
+    }
+}
+
+// Bubble Sort Algorithmus
+void bubbleSort(uint8_t arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        bool swapped = false; // Überprüfen, ob ein Tausch stattgefunden hat
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) { // Wenn das aktuelle Element größer ist
+                uint8_t temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp; // Tausche die Elemente
+                swapped = true; // Ein Tausch fand statt
+            }
+        }
+        if (!swapped) break; // Wenn kein Tausch stattgefunden hat, ist das Array sortiert
+    }
+}
+
+// Funktion, um einen kurzen Piepton zu erzeugen
+void beep(int duration) {
+    tone(BUZZER_PIN, 1000, duration); // Piepton 1000 Hz
+    delay(duration + 50);  // Kurze Verzögerung
 }
