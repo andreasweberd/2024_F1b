@@ -1,0 +1,41 @@
+const int arraySize = 1000;
+int numbers[arraySize];
+
+void setup() {
+    Serial.begin(9600);
+    pinMode(9, OUTPUT);
+    randomSeed(analogRead(0)); 
+
+    for (int i = 0; i < arraySize; i++) {
+        numbers[i] = random(1, 100); 
+    }
+
+    digitalWrite(9, HIGH);
+    delay(100);
+    digitalWrite(9, LOW);
+    unsigned long startTime = millis();
+    bubbleSort(numbers, arraySize);
+    unsigned long endTime = millis();
+
+    Serial.println();
+    Serial.print("Sortierdauer: ");
+    Serial.print(endTime - startTime);
+    Serial.println(" ms");
+}
+
+void loop(){}
+
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    digitalWrite(9, HIGH);
+    delay(100);
+    digitalWrite(9, LOW);
+}
